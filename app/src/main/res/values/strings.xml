@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ToDo List App</string>
+
+    <!--Welcome-->
+    <string name="welcome_manage_your_time">Manage Your Time</string>
+    <string name="welcome_please_enter_your_name">Please enter your name</string>
+    <string name="welcome_name">Name</string>
+    <string name="welcome_start">Start</string>
+    <string name="welcome_todo_list_app">ToDo List App</string>
 </resources>
