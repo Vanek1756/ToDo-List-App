@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+def versionMajor = 0
+def versionMinor = 0
+def versionPatch = 1
+
+def APK_NAME = "ToDOListApp"
+
+def VERSION_CODE = versionMajor * 10000 + versionMinor * 1000 + versionPatch
+def VERSION_NAME = "${versionMajor}.${versionMinor}.${versionPatch}"
+
+android {
+    namespace 'com.example.todolistapp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.todolistapp"
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        renderscriptTargetApi rootProject.ext.targetSdkVersion
+
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled true
+            shrinkResources false
+            archivesBaseName = APK_NAME + "-" + android.defaultConfig.versionName
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources false
+            archivesBaseName = APK_NAME + "-" + android.defaultConfig.versionName
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Tests
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
