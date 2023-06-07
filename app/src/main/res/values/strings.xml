@@ -7,4 +7,29 @@
     <string name="welcome_name">Name</string>
     <string name="welcome_start">Start</string>
     <string name="welcome_todo_list_app">ToDo List App</string>
+
+    <!--Navigation View-->
+    <string name="menu_home">HOME</string>
+    <string name="menu_categories">CATEGORIES</string>
+    <string name="menu_calendar">CALENDAR</string>
+    <string name="menu_settings">SETTINGS</string>
+
+    <!--Home-->
+    <string name="home_hello">Hello,</string>
+    <string name="home_categories">Categories</string>
+    <string name="home_add_new_tasks">Add new tasks</string>
+    <string name="home_tasks">tasks</string>
+    <string name="home_today_s_tasks">Today\'s tasks</string>
+    <string name="home_pending">Pending</string>
+    <string name="home_done_tasks">Done tasks</string>
+    <string-array name="home_tab_bar">
+        <item>@string/home_today_s_tasks</item>
+        <item>@string/home_pending</item>
+        <item>@string/home_done_tasks</item>
+    </string-array>
+
+    <!--Categories-->
+    <string name="categories_my_categories">My categories</string>
+
+
 </resources>
